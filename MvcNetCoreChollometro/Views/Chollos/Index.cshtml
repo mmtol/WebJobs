@@ -1,0 +1,30 @@
+﻿@model List<Chollo>
+
+<h1>Chollos</h1>
+<h2>Numero: @Model.Count</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Link</th>
+            <th>Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Chollo chollo in Model)
+        {
+            <tr>
+                <td>@chollo.Titulo</td>
+                <td>
+                    <a href="@chollo.Link">Link</a>
+                </td>
+                <td>
+                    <div>
+                        @Html.Raw(chollo.Descripcion)
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
